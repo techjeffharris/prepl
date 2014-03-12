@@ -10,7 +10,10 @@ process.on('SIGINT', function () {
             interrupt = undefined;
         }, 500);
     } else {
-        prepl.stop();
+        prepl.stop(function() {
+            console.log('prepl should be stopped');
+            
+        });
     }
 });
 
