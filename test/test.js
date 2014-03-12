@@ -1,11 +1,18 @@
-prepl
-=====
 
-Programmatic Read Eval Print Loop
+var interrupt,
+    Prepl = require('../index');
 
-## Use
-```javascript
-var Prepl = require('prepl');
+process.on('SIGINT', function () {
+
+    if (interrupt === undefined) {
+        console.log('\n(^C again to quit)'); 
+        interrupt = setTimeout(function () {
+            interrupt = undefined;
+        }, 500);
+    } else {
+        prepl.stop();
+    }
+});
 
 var options = {
     address: '0.0.0.0',
@@ -57,4 +64,3 @@ setTimeout(function () {
     console.log('unregistered "start"');
     
 }, 5000);
-```
