@@ -4,20 +4,14 @@ prepl
 Programmatic Read Eval Print Loop
 
 ```javascript
-var Prepl = require('prepl');
-
-var repl = new Prepl({
-    address: '0.0.0.0',
-    port: 1338,
-    socket: undefined
-});
+var repl = require('prepl')();
 
 repl.start();
 ```
 
-Use `nc` to connect:
+Use [nc](http://en.wikipedia.org/wiki/Netcat) to connect:
 
-    $ nc prepl.sock
+    $ nc -u prepl.sock
     > help
         COMMAND     DESCRIPTION
         help        Display this help message
@@ -49,11 +43,15 @@ Exposed by `require('prepl')`.
 Creates a new `Prepl`.  Works with and without `new`:
 
 ```javascript
-var Prepl = require('prepl')();
+var prepl = require('prepl')();
   // or
 var Prepl = require('prepl');
 var repl = new Prepl();
 ```
+
+### Prepl(options:Object)
+
+Optionally, the first argument of the Server constructor may be an options object to be passed to [Prepl.configure](#preplconfigureoptionsobject).
 
 ### Prepl.configure(options:Object)
 * options `Object` A hash of options to override defaults
@@ -62,8 +60,9 @@ Configure the REPL:
 
 ```javascript
 repl.configure({
-    name: "foo",
-    socket: "foo.sock"
+    address: '0.0.0.0',
+    port: 1338,
+    socket: undefined
 });
 ```
 
