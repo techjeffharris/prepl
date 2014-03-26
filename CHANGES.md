@@ -2,6 +2,10 @@ CHANGELOG
 =========
 
 ## v1.0
+### v1.0.3
+* removed extra newline after column headers in replHelp
+* added use examples to README.md
+
 ### v1.0.2
 * Updated README.md
 * Created CHANGES.md

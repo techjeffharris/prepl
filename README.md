@@ -15,6 +15,16 @@ var repl = new Prepl({
 repl.start();
 ```
 
+Use `nc` to connect:
+
+    $ nc prepl.sock
+    > help
+        COMMAND     DESCRIPTION
+        help        Display this help message
+        exit        Disconnect from REPL
+    > exit
+    $ 
+
 ## Configuration
 Default configuration:
 ```json
@@ -80,6 +90,16 @@ repl.register([{
 ]);
 ```
 
+The command(s) will be now available and listed in the help menu:
+
+    > help
+        COMMAND     DESCRIPTION
+        help        Display this help message
+        exit        Disconnect from REPL
+        start       Start the application
+        restart     Restart the application
+    > 
+
 ### Prepl.unregister(name:String)
 * name `String` command to be unregistered
  
@@ -88,6 +108,15 @@ Unregister the given action:
 ```javascript
 repl.unregister('start');
 ```
+
+The command will no longer be available or listen in the help menu:
+
+    > help
+        COMMAND     DESCRIPTION
+        help        Display this help message
+        exit        Disconnect from REPL
+        restart     Restart the application
+    >
 
 ### Prepl.start(done:Function)
 * done `Function` Optional callback to be called when REPL has started
