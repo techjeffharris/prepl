@@ -69,8 +69,7 @@ repl.configure({
 ### Prepl.register(commands:Array)
 * commands `Array` An array of commands to be registered
 
-Registers the given commands with the REPL:
-
+Registers the list of commands with the REPL. Command names may not exceed 15 characters.
 ```javascript
 repl.register([{
         name: "start",
@@ -89,7 +88,7 @@ repl.register([{
 ]);
 ```
 
-The command(s) will be now available and listed in the help menu:
+The command(s) will be now available and listed in the help menu.
 
     > help
         COMMAND     DESCRIPTION
