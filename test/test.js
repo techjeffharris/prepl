@@ -18,9 +18,9 @@ process.on('SIGINT', function () {
 });
 
 var options = {
-    address: '0.0.0.0',
-    port: 1338,
-    socket: undefined
+//     address: '0.0.0.0',
+//     port: 1338,
+//     socket: undefined
 };
 
 var prepl = new Prepl(options);
