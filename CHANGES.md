@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+## v1.2
+### v1.2.0
+* added `broadcast` method to send a message to all clients connected.
+
 ## v1.1
 ### v1.1.0
 * `Prepl.register` now requires that the command's name length 15 or less.
