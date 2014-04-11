@@ -20,23 +20,7 @@ process.on('SIGINT', function () {
 var options = {
     // address: '0.0.0.0',
     // port: 1338,
-    // socket: undefined
-    commands: [
-        {
-            name: "start",
-            help: "Start the application",
-            action: function () {
-                console.log('cluster started');
-            },
-        },
-        {
-            name: "restart",
-            help: "Restart the application",
-            action: function () {
-                console.log('cluster restarted');
-            }
-        }
-    ]   
+    // socket: undefined   
 };
 
 var prepl = new Prepl(options);
@@ -56,6 +40,23 @@ prepl.on('stopped', function onReplStopped () {
 prepl.on('ready', function onReplReady () {
     console.log('the REPL server is now ready!');
 });
+
+prepl.register([
+    {
+        name: "start",
+        help: "Start the application",
+        action: function () {
+            console.log('cluster started');
+        },
+    },
+    {
+        name: "restart",
+        help: "Restart the application",
+        action: function () {
+            console.log('cluster restarted');
+        }
+    }
+]);
 
 prepl.start(function () {
     console.log('the REPL server is _still_ ready!');
