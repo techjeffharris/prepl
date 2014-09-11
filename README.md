@@ -1,7 +1,7 @@
-prepl
+PREPL
 =====
 
-Programmatic Read Eval Print Loop
+A simple, event-based, programmatic read-eval-print loop
 
 ```javascript
 var repl = require('prepl')();
@@ -69,8 +69,12 @@ repl.configure({
 ### Prepl.register(commands:Array)
 * commands `Array` An array of commands to be registered
 
-Registers the list of commands with the REPL. Command names may not exceed 15 characters.
+Registers the list of commands with the REPL. Command have a name identifier, a message to describe the command in the help menu, and a function to carry out the given command.  This function is passed the socket object of the client connection to allow output to the client terminal.  names may not exceed 15 characters.
+
 ```javascript
+
+var server = new MyServerApp({foo:'bar'};
+
 repl.register([{
         name: "start",
         help: "Start the application",
@@ -84,7 +88,16 @@ repl.register([{
         action: function () {
             console.log('cluster restarted');
         }
+    }, 
+    {
+        name: 'update',
+        help: 'Update the server\'s cached memory',
+        action: function (socket) {
+            server.update(function () {
+            socket.write('cache updated');
+        }
     }
+})
 ]);
 ```
 
@@ -96,7 +109,7 @@ The command(s) will be now available and listed in the help menu.
         exit        Disconnect from REPL
         start       Start the application
         restart     Restart the application
-    > 
+    >
 
 ### Prepl.unregister(name:String)
 * name `String` command to be unregistered
