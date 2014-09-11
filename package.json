@@ -1,13 +1,13 @@
 {
-    "name": "prepl",
-    "version": "1.2.0",
-    "author": "Jeff Harris <techjeffharris@gmail.com> (http://www.intangiblehost.net)",
-    "repository": "https://github.com/techjeffharris/prepl.git",
-    "license": {
-        "type": "BSD",
-        "file": "LICENSE"
-    },
-    "dependencies": {
-        "techjeffharris-utils": "*"
-    }
+  "name": "prepl",
+  "version": "1.2.1",
+  "author": "Jeff Harris <techjeffharris@gmail.com> (http://www.intangiblehost.net)",
+  "repository": "https://github.com/techjeffharris/prepl.git",
+  "license": {
+    "type": "BSD",
+    "file": "LICENSE"
+  },
+  "dependencies": {
+    "techjeffharris-utils": "*"
+  }
 }
