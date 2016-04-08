@@ -2,7 +2,7 @@ PREPL
 =====
 
 _*NOTE* This repository is not maintained, and I recently 
-found a much more comprehensive solution [vorpal][]
+found a much more comprehensive solution: [dthree/vorpal][vorpal]._
 
 A simple, event-based, programmatic read-eval-print loop
 
@@ -190,4 +190,4 @@ repl.on('ready', function onReplReady () {
 });
 ```
 
-    [vorpal]: https://github.com/dthree/vorpal
+[vorpal]: https://github.com/dthree/vorpal
