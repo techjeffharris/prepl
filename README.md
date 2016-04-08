@@ -1,6 +1,9 @@
 PREPL
 =====
 
+_*NOTE* This repository is not maintained, and I recently 
+found a much more comprehensive solution [vorpal][]
+
 A simple, event-based, programmatic read-eval-print loop
 
 ```javascript
@@ -186,3 +189,5 @@ repl.on('ready', function onReplReady () {
     console.log('the REPL server is ready!');
 });
 ```
+
+    [vorpal]: https://github.com/dthree/vorpal
